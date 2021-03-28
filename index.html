@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webgl</title>
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+<body>
+ <div id="app">
+     <div id="one"></div>
+     <div id="two"></div>
+ </div>
+ <script>
+     const app = document.querySelector('#app')
+     const handeler = function () {
+         console.log(11)
+     }
+     app.addEventListener('click',handeler,true)
+     app.addEventListener('click',handeler,true)
+     app.removeEventListener('click',handeler,false)
+     window.addEventListener('resize', (e)=>{
+         // console.log(e.target.innerWidth)
+     })
+     let appScrollTop = 0
+     document.querySelector('#app').addEventListener('scroll',function (e) {
+         const target = e.target
+         const one = target.querySelector('#one')
+         console.log(target.scrollTop, appScrollTop)
+         appScrollTop = target.scrollTop
+     })
+ </script>
+</body>
+</html>
